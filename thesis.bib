@@ -4,3 +4,200 @@
 	year = {2009},
 	publisher = {Prentice Hall}
 }
+
+@InProceedings{tcp-fuzzing3,
+author="Fiter{\u{a}}u-Bro{\c{s}}tean, Paul
+and Howar, Falk",
+editor="Petrucci, Laure
+and Seceleanu, Cristina
+and Cavalcanti, Ana",
+title="Learning-Based Testing the Sliding Window Behavior of TCP Implementations",
+booktitle="Critical Systems: Formal Methods and Automated Verification",
+year="2017",
+publisher="Springer International Publishing",
+address="Cham",
+pages="185--200",
+abstract="We develop a learning-based testing framework for register automaton models that can express the windowing behavior of TCP, thereby presenting the first significant application of register automata learning to realistic software for a class of automata with Boolean-arithmetic constraints over data values. We have applied our framework to TCP implementations belonging to different operating systems and have found a violation of the TCP specification in Linux and Windows. The violation has been confirmed by Linux developers.",
+isbn="978-3-319-67113-0"
+}
+
+
+@article{vaandrager,
+  title={Model learning},
+  author={Vaandrager, Frits},
+  journal={Communications of the ACM},
+  volume={60},
+  number={2},
+  pages={86--95},
+  year={2017},
+  publisher={ACM New York, NY, USA}
+}
+
+
+@InProceedings{tcp-fuzzing2,
+author="Fiter{\u{a}}u-Bro{\c{s}}tean, Paul
+and Janssen, Ramon
+and Vaandrager, Frits",
+editor="Chaudhuri, Swarat
+and Farzan, Azadeh",
+title="Combining Model Learning and Model Checking to Analyze TCP Implementations",
+booktitle="Computer Aided Verification",
+year="2016",
+publisher="Springer International Publishing",
+address="Cham",
+pages="454--471",
+abstract="We combine model learning and model checking in a challenging case study involving Linux, Windows and FreeBSD implementations of TCP. We use model learning to infer models of different software components and then apply model checking to fully explore what may happen when these components (e.g. a Linux client and a Windows server) interact. Our analysis reveals several instances in which TCP implementations do not conform to their RFC specifications.",
+isbn="978-3-319-41540-6"
+}
+
+
+
+@InProceedings{tcp-fuzzing1,
+author="Fiter{\u{a}}u-Bro{\c{s}}tean, Paul
+and Janssen, Ramon
+and Vaandrager, Frits",
+editor="Lang, Fr{\'e}d{\'e}ric
+and Flammini, Francesco",
+title="Learning Fragments of the TCP Network Protocol",
+booktitle="Formal Methods for Industrial Critical Systems",
+year="2014",
+publisher="Springer International Publishing",
+address="Cham",
+pages="78--93",
+abstract="We apply automata learning techniques to learn fragments of the TCP network protocol by observing its external behaviour. We show that different implementations of TCP in Windows 8 and Ubuntu induce different automata models, thus allowing for fingerprinting of these implementations. In order to infer our models we use the notion of a mapper component introduced by Aarts, Jonsson and Uijen, which abstracts the large number of possible TCP packets into a limited number of abstract actions that can be handled by the regular inference tool LearnLib. Inspection of the learned models reveals that both Windows 8 and Ubuntu 13.10 violate RFC 793.",
+isbn="978-3-319-10702-8"
+}
+
+
+@misc{rfc675,
+    series =    {Request for Comments},
+    number =    675,
+    howpublished =  {RFC 675},
+    publisher = {RFC Editor},
+    doi =       {10.17487/RFC0675},
+    url =       {https://www.rfc-editor.org/info/rfc675},
+    author =    {},
+    title =     {{Specification of Internet Transmission Control Program}},
+    pagetotal = 70,
+    year =      1974,
+    month =     dec,
+    abstract =  {The first detailed specification of TCP; see RFC 793.},
+}
+
+
+@misc{rfc761,
+    series =    {Request for Comments},
+    number =    761,
+    howpublished =  {RFC 761},
+    publisher = {RFC Editor},
+    doi =       {10.17487/RFC0761},
+    url =       {https://www.rfc-editor.org/info/rfc761},
+    author =    {},
+    title =     {{DoD standard Transmission Control Protocol}},
+    pagetotal = 88,
+    year =      1980,
+    month =     jan,
+    abstract =  {},
+}
+
+@misc{PSF,
+  author = {},
+  title = {ProtocolState-Fuzzer},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/protocol-fuzzing/protocol-state-fuzzer}}
+}
+
+@misc{tcp-learner,
+  author = {Fiter\u{a}u-Bro\c{s}tean, Paul},
+  title = {tcp-learner},
+  year = {2018},
+  publisher = {Gitlab},
+  journal = {Gitlab repository},
+  howpublished = {\url{https://gitlab.science.ru.nl/pfiteraubrostean/tcp-learner}}
+}
+
+@InProceedings{EDHOC-fuzzer,
+  author = {Sagonas, Konstantinos and Typaldos, Thanasis},
+  title = {{EDHOC-Fuzzer}: An {EDHOC} Protocol State Fuzzer},
+  year = {2023},
+  publisher = {ACM},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3597926.3604922},
+  doi = {10.1145/3597926.3604922},
+  abstract = {EDHOC is a compact and lightweight authenticated key exchange protocol proposed by the IETF, whose design focuses on small message sizes, in order to be suitable for constrained IoT communication technologies. In this tool paper, we overview EDHOC-Fuzzer, a protocol state fuzzer for implementations of EDHOC clients and servers. It employs model learning to generate a state machine model of an EDHOC implementation, capturing its input/output behavior. This model can then be used for model-based testing, for fingerprinting, or can be analyzed for non-conformances, state machine bugs and security vulnerabilities. We overview the architecture and use of EDHOC-Fuzzer, and present some examples of models produced by the tool and our current findings.},
+  booktitle = {Proceedings of the 32nd ACM SIGSOFT International Symposium on Software Testing and Analysis},
+  pages = {1495–1498},
+  numpages = {4},
+  keywords = {CoAP, EDHOC, IoT protocols, OSCORE, Software security, fuzzing, model learning, model-based testing, protocol security},
+  location = {Seattle, WA, USA},
+  series = {ISSTA 2023}
+}
+
+@InProceedings{DTLS-fuzzer,
+  author = {Fiterău-Broştean, Paul and Jonsson, Bengt and Sagonas, Konstantinos and Tåquist, Fredrik},
+  title = {{DTLS-Fuzzer}: A {DTLS} Protocol State Fuzzer}, 
+  booktitle = {2022 IEEE Conference on Software Testing, Verification and Validation},
+  series = {ICST},
+  year = {2022},
+  pages = {456-458},
+  keywords={Software testing;Analytical models;Protocols;Conferences;Computer architecture;Behavioral sciences;Security;model learning;network security testing;model-based testing},
+  doi = {10.1109/ICST53961.2022.00051},
+  url = {https://ieeexplore.ieee.org/document/9787899}
+}
+
+@website{JSON-schema,
+	author = {},
+	title = {{J}{S}{O}{N} {S}chema --- json-schema.org},
+	howpublished = {\url{https://json-schema.org/}},
+	year = {2019},
+	note = {[Accessed 20-03-2025]},
+}
+
+@website{TOML,
+	author = {},
+	title = {{T}{O}{M}{L}: {T}om\&apos;s {O}bvious {M}inimal {L}anguage --- toml.io},
+	howpublished = {\url{https://toml.io/ }},
+	year = {2021},
+	note = {[Accessed 20-03-2025]},
+}
+
+@article{fuzzing,
+author = {Miller, Barton P. and Fredriksen, Lars and So, Bryan},
+title = {An empirical study of the reliability of UNIX utilities},
+year = {1990},
+issue_date = {Dec. 1990},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {33},
+number = {12},
+issn = {0001-0782},
+url = {https://doi.org/10.1145/96267.96279},
+doi = {10.1145/96267.96279},
+abstract = {The following section describes the tools we built to test the utilities. These tools include the fuzz (random character) generator, ptyjig (to test interactive utilities), and scripts to automate the testing process. Next, we will describe the tests we performed, giving the types of input we presented to the utilities. Results from the tests will follow along with an analysis of the results, including identification and classification of the program bugs that caused the crashes. The final section presents concluding remarks, including suggestions for avoiding the types of problems detected by our study and some commentary on the bugs we found. We include an Appendix with the user manual pages for fuzz and ptyjig.},
+journal = {Commun. ACM},
+month = dec,
+pages = {32–44},
+numpages = {13}
+}
+
+@article{sewell,
+author = {Bishop, Steve and Fairbairn, Matthew and Norrish, Michael and Sewell, Peter and Smith, Michael and Wansbrough, Keith},
+title = {Engineering with logic: HOL specification and symbolic-evaluation testing for TCP implementations},
+year = {2006},
+issue_date = {January 2006},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {41},
+number = {1},
+issn = {0362-1340},
+url = {https://doi.org/10.1145/1111320.1111043},
+doi = {10.1145/1111320.1111043},
+abstract = {The TCP/IP protocols and Sockets API underlie much of modern computation, but their semantics have historically been very complex and ill-defined. The real standard is the de facto one of the common implementations, including, for example, the 15,000--20,000 lines of C in the BSD implementation. Dealing rigorously with the behaviour of such bodies of code is challenging.We have recently developed a post-hoc specification of TCP, UDP, and Sockets that is rigorous, detailed, readable, has broad coverage, and is remarkably accurate. In this paper we describe the novel techniques that were required.Working within a general-purpose proof assistant (HOL), we developed language idioms (within higher-order logic) in which to write the specification: operational semantics with nondeterminism, time, system calls, monadic relational programming, etc. We followed an experimental semantics approach, validating the specification against several thousand traces captured from three implementations (FreeBSD, Linux, and WinXP). Many differences between these were identified, and a number of bugs. Validation was done using a special-purpose symbolic model checker programmed above HOL.We suggest that similar logic engineering techniques could be applied to future critical software infrastructure at design time, leading to cleaner designs and (via specification-based testing using a similar checker) more predictable implementations.},
+journal = {SIGPLAN Not.},
+month = jan,
+pages = {55–66},
+numpages = {12},
+keywords = {specification, sockets, operational semantics, network protocols, higher-order logic, conformance testing, TCP/IP, HOL, API}
+}

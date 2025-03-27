@@ -1,1 +1,1 @@
-Note: Insert the German translation of the English abstract here.
+Swedish translation of abstract here

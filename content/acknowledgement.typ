@@ -1,7 +1,1 @@
-First, I'd like to thank coffee for fueling my brain cells and making this thesis possible.
-
-A big shoutout to my advisor for your patience and for not laughing (too hard) at my wild ideas.
-
-To my family, your snack supplies and constant reminders to "just finish it already" were invaluable.
-
-Finally, to my pet, your keyboard sit-ins ensured I took breaks, whether I wanted to or not.
+I would like to thank the Norrlands nation library for providing me a place to study while working on this thesis. I would also like to thank Albin Karlsson for letting me use his laptop to learn the model for macOS.

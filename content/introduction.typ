@@ -1,19 +1,18 @@
 #import "/utils/todo.typ": TODO
 
 = Introduction
-#TODO[
-  Introduce the topic of your thesis, e.g. with a little historical overview.
-]
+Uppsala University currently maintains protocol-state fuzzers for various network protocols, e.g DTLS@DTLS-fuzzer and EDHOC@EDHOC-fuzzer.
+
+However the implementation for TCP@tcp-learner is rather old, being based on python2 which has since been deprecated, furthermore a generalized library for implementing state fuzzers has since been created @PSF.
+
+Due to this an updated version of tcp-learner became necessary.
+
 
 == Problem
 #TODO[
   Describe the problem that you like to address in your thesis to show the importance of your work. Focus on the negative symptoms of the currently available solution.
 ]
-
-== Motivation
-#TODO[
-  Motivate scientifically why solving this problem is necessary. What kind of benefits do we have by solving the problem?
-]
+As previously mentioned tcp-learner's mapper-component is based on python2 which is becoming increasingly unsupported on modern systems. The learner side doesn't fair much better, using an antiquated version of LearnLib.
 
 == Objectives
 #TODO[

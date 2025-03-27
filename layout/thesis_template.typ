@@ -2,7 +2,9 @@
 #import "/layout/titlepage.typ": *
 #import "/layout/disclaimer.typ": *
 #import "/layout/acknowledgement.typ": acknowledgement as acknowledgement_layout
-#import "/layout/transparency_ai_tools.typ": transparency_ai_tools as transparency_ai_tools_layout
+#import "/layout/transparency_ai_tools.typ": (
+  transparency_ai_tools as transparency_ai_tools_layout,
+)
 #import "/layout/abstract.typ": *
 #import "/utils/print_page_break.typ": *
 #import "/layout/fonts.typ": *
@@ -24,14 +26,14 @@
   is_print: false,
   body,
 ) = {
-  cover(
-    title: title,
-    degree: degree,
-    program: program,
-    author: author,
-  )
+  // cover(
+  //   title: title,
+  //   degree: degree,
+  //   program: program,
+  //   author: author,
+  // )
 
-  pagebreak()
+  // pagebreak()
 
   titlepage(
     title: title,
@@ -42,7 +44,7 @@
     advisors: advisors,
     author: author,
     startDate: startDate,
-    submissionDate: submissionDate
+    submissionDate: submissionDate,
   )
 
   print_page_break(print: is_print, to: "even")
@@ -51,12 +53,12 @@
     title: title,
     degree: degree,
     author: author,
-    submissionDate: submissionDate
+    submissionDate: submissionDate,
   )
-  transparency_ai_tools_layout(transparency_ai_tools)
+  // transparency_ai_tools_layout(transparency_ai_tools)
 
   print_page_break(print: is_print)
-  
+
   acknowledgement_layout(acknowledgement)
 
   print_page_break(print: is_print)
@@ -71,11 +73,11 @@
   )
 
   set text(
-    font: fonts.body, 
-    size: 12pt, 
-    lang: "en"
+    font: fonts.body,
+    size: 11pt,
+    lang: "en",
   )
-  
+
   show math.equation: set text(weight: 400)
 
   // --- Headings ---
@@ -91,7 +93,7 @@
         [Chapter #numbering(
           el.numbering,
           ..counter(heading).at(el.location())
-        )]
+        )],
       )
     } else {
       it
@@ -106,7 +108,7 @@
 
   // --- Figures ---
   show figure: set text(size: 0.85em)
-  
+
   // --- Table of Contents ---
   show outline.entry.where(level: 1): it => {
     v(15pt, weak: true)
@@ -117,15 +119,15 @@
       text(font: fonts.body, 1.5em, weight: 700, "Contents")
       v(15mm)
     },
-    indent: 2em
+    indent: 2em,
   )
-  
-  
+
+
   v(2.4fr)
   pagebreak()
 
 
-    // Main body. Reset page numbering.
+  // Main body. Reset page numbering.
   set page(numbering: "1")
   counter(page).update(1)
   set par(justify: true, first-line-indent: 2em)
@@ -136,7 +138,7 @@
   pagebreak()
   heading(numbering: none)[List of Figures]
   outline(
-    title:"",
+    title: "",
     target: figure.where(kind: image),
   )
 
@@ -145,13 +147,13 @@
   heading(numbering: none)[List of Tables]
   outline(
     title: "",
-    target: figure.where(kind: table)
+    target: figure.where(kind: table),
   )
 
   // Appendix.
   pagebreak()
   heading(numbering: none)[Appendix A: Supplementary Material]
-  include("/layout/appendix.typ")
+  include ("/layout/appendix.typ")
 
   pagebreak()
   bibliography("/thesis.bib")
