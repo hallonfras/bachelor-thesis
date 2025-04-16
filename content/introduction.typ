@@ -1,25 +1,26 @@
 #import "/utils/todo.typ": TODO
 
 = Introduction
-Uppsala University currently maintains protocol-state fuzzers for various network protocols, e.g DTLS@DTLS-fuzzer and EDHOC@EDHOC-fuzzer.
-
-However the implementation for TCP@tcp-learner is rather old, being based on python2 which has since been deprecated, furthermore a generalized library for implementing state fuzzers has since been created @PSF.
-
-Due to this an updated version of tcp-learner became necessary.
+The amount of connected devices is expected to reach 40 billion by 2030 @iot, TCP accounting for roughly half of this traffic. This puts increasing pressure on the security and reliability of protocol implementations.
 
 
-== Problem
-#TODO[
-  Describe the problem that you like to address in your thesis to show the importance of your work. Focus on the negative symptoms of the currently available solution.
-]
-As previously mentioned tcp-learner's mapper-component is based on python2 which is becoming increasingly unsupported on modern systems. The learner side doesn't fair much better, using an antiquated version of LearnLib.
+Much effort has been put in to studying model-based conformance testing for TCP. Early efforts often used handcrafted models based upon the protocol specification @5727598, This however is not guaranteed to be consistent with how actual implementations behave in practice.
 
-== Objectives
-#TODO[
-  Describe the research goals and/or research questions and how you address them by summarizing what you want to achieve in your thesis, e.g. developing a system and then evaluating it.
-]
+In 2006 Bishop et al @sewell developed a post hoc model of how the TCP protocol behaves in practice, they then implemented a model checker in order in order to verify their specification against traces gathered from various implementations of the TCP protocol.
 
-== Outline
-#TODO[
-  Describe the outline of your thesis
-]
+#TODO("I need some sourcing on state fuzzing methodology")
+
+More recently efforts have been made in trying to infer a model based upon a running protocol implementation. This is done through a process called state fuzzing. State fuzzing involves sending input sequences to a protocol implementation and constructing a model based on the responses.
+
+This technique has been succesfully applied to protocols such as TLS @somorovsky,SSH @pverleg and TCP. @ramonjansen
+
+There exist up to date implementations for fuzzing TLS and SSH in TLS-attacker @TLS-attacker and ssh-fuzzer @ssh-fuzzer, however implementations for TCP are rather outdated. Work by Ramon Jansen @ramonjansen and Fiterau-Brostean et al. @tcp-fuzzing1 is almost ten years old at this point.
+
+In this work i seek to remedy this by developing TCP-Fuzzer, a modern implementation of state fuzzing for TCP. I then apply it to some common operating system TCP implementations.
+
+The outline of this thesis is as follows. Sections 2.1 and 2.2 explain the basics of the internet protocol stack and TCP. Section 2.3 provides information on the state fuzzing process.
+
+Section 3 details how TCP-Fuzzer is implemented with section 3.2 focusing on the mapper component and section 3.3 on the learner component. Section 3.4 describes the experimental setup and how the SUTs are configured.
+
+In section 4 the resulting models are discussed and compared. Finally section 5 contains conclusions and future work.
+

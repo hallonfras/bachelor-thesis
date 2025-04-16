@@ -3,8 +3,6 @@
 
 = Implementation
 
-#TODO("Rewrite following paul's comments")
-
 == Overview
 The work I have done in this thesis largely consists of implementing the tool TCP-Fuzzer, a modern state fuzzer for TCP.
 
@@ -46,7 +44,7 @@ The Builder is responsible for parsing the configuration file and instantiating 
 === Sender
 
 The Sender is responsible for constructing TCP packets and sending them to the SUT. I have implemented this using _scapy_ @scapy, a packet manipulation library capable of crafting, sending and recieving various kinds of packets.
-Scapy provides the function sr1 which allows sending any number of packets #footnote("in this case always  one") and receiving the first response, with configurable timeout. This is useful since we never expect to receive more than one packet in response from the SUT. In addition the ability to configure the timeout is needed since we need to set the timeout such that we can be sure we have received the response from the SUT, otherwise this will cause non-determinism.
+Scapy provides the function sr1 which allows sending any number of packets #footnote("in this case always  one") and receiving the first response, with configurable timeout. This is useful since we never expect to receive more than one packet in response from the SUT. In addition the ability to configure the timeout is needed since we need to set the timeout such that we can be sure we have received the response from the SUT, otherwise this will cause non-determinism. The sender also provides the ability to reset the SUT between input sequences sent by the learner. This is done by simply switching the port number to a different random port number.
 
 === LearnerSocket
 
@@ -63,8 +61,13 @@ I have implemented the Learner in java using the library protocol-state-fuzzer @
 
 In addition I have chosen to manage seq and ack numbers in the learner, sending them to the mapper along with the flags when constructing packets. This is to facilitate future work on TCP-Fuzzer that might implement register automata learning with seq and ack numbers as parameters. Due to time constraints the seq and ack numbers which the learner outputs are always valid, accurately handling invalid numbers requires distinguishing between different categories of invalid numbers (e.g reusing previous sequence numbers vs skipping forward to future ones). This would vastly expand the complexity of the learner and I have therefore not implemented support for invalid sequence and acknowledgement numbers.
 
+In order to make each sequence sent independent the seq number is incremented by a large number (> 1000000) each time the SUT is reset. This is to make sure future seq numbers are outside the window of any previous communication. For the same reason the seq number is also incremented when receiving a packet with RST flag set.
+
 
 == Experimental Setup
-In order to simplify running on different operating systems i have chosen to run the experiments using docker and docker-compose @docker. This means the installation process is the same regardless of operating system. Since docker containers use the host kernel we are still testing the host TCP stack even if when interacting with the container it seems to be running linux.
+
+#TODO("Might want to write about disabling TCP delayed ack and nagle's algorithm on the SUTs")
+
+In order to simplify running on different operating systems i have chosen to run the experiments using docker and docker-compose @docker. This means the installation process is largely the same regardless of host operating system. In order to provide a SUT docker images running qemu @docker-macos @docker-windows have been used for non Linux SUTs. For Linux SUTs the host kernel is used. In order to listen to incoming TCP connections i have used a simple TCP echo-server @tcp-echo running on the SUT.
 
 

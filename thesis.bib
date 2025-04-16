@@ -33,11 +33,85 @@ isbn="978-3-319-67113-0"
   publisher={ACM New York, NY, USA}
 }
 
+@mastersthesis{pverleg,
+	title={Inferring SSH state machines using
+protocol state fuzzing},
+	author={Verleg, Patrick},
+	school={Radboud University},
+	year={2016}
+}
+
+@mastersthesis{ramonjansen,
+	title={Learning and Model Checking
+Real-world TCP Implementations},
+	author={Jansen, Ramon},
+	school={Radboud University},
+	year={2015}
+}
+
+@inproceedings{somorovsky,
+author = {Somorovsky, Juraj},
+title = {Systematic Fuzzing and Testing of TLS Libraries},
+year = {2016},
+isbn = {9781450341394},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2976749.2978411},
+doi = {10.1145/2976749.2978411},
+abstract = {We present TLS-Attacker, an open source framework for evaluating the security of TLS libraries. TLS-Attacker allows security engineers to create custom TLS message flows and arbitrarily modify message contents using a simple interface in order to test the behavior of their libraries. Based on TLS-Attacker, we present a two-stage fuzzing approach to evaluate TLS server behavior. Our approach automatically searches for cryptographic failures and boundary violation vulnerabilities. It allowed us to find unusual padding oracle vulnerabilities and overflows/overreads in widely used TLS libraries, including OpenSSL, Botan, and MatrixSSL.Our findings motivate developers to create comprehensive test suites, including positive as well as negative tests, for the evaluation of TLS libraries. We use TLS-Attacker to create such a test suite framework which finds further problems in Botan.},
+booktitle = {Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security},
+pages = {1492–1504},
+numpages = {13},
+keywords = {TLS, fuzzing, padding oracle attack},
+location = {Vienna, Austria},
+series = {CCS '16}
+}
+
+@INPROCEEDINGS {5727598,
+	author = { Bruns, G. and Staskauskas, M. },
+	booktitle = { Software Engineering for Parallel and Distributed Systems, International Symposium on },
+	title = {{ Applying formal methods to a protocol standard and its implementations }},
+	year = {1998},
+	volume = {},
+	ISSN = {},
+	pages = {198-205},
+	abstract = { We explore the use of formal methods in the analysis of the SONET Automatic Protection Switching (APS) protocol. Unlike most protocol studies, we look at both conformance and interoperability aspect of APS. We use the Concurrency Workbench of North Carolina (R. Cleveland and S. Sims, 1996) to show proper interoperation of network elements running the protocol, and use the VeriSoft tool (P. Godefroid, 1997) to show conformance of Lucent Technologies APS implementation to the APS standard. We define a new notion of conformance, identify problems with APS, suggest general improvements to the structure of protocol standards, and suggest how protocol implementations can be written to allow conformance checks to be automated },
+	keywords = {},
+	doi = {10.1109/PDSE.1998.668180},
+	url = {https://doi.ieeecomputersociety.org/10.1109/PDSE.1998.668180},
+	publisher = {IEEE Computer Society},
+	address = {Los Alamitos, CA, USA},
+	month =Apr
+}
+
+
+
+@manual{iot,
+	title = {State of IoT 2024},
+	author = {IOT Analytics},
+	year = {2024},
+	howpublished = {\url{https://iot-analytics.com/wp/wp-content/uploads/2024/09/INSIGHTS-RELEASE-Number-of-connected-IoT-devices-vf.pdf}}
+}
+
 @misc{scapy,
 	author = {},
 	title = {{S}capy --- scapy.net},
 	howpublished = {\url{https://scapy.net/}},
 	note = {[Accessed 27-03-2025]},
+}
+
+@misc{TLS-attacker,
+	author = {},
+	title = {{G}it{H}ub - tls-attacker/{T}{L}{S}-{A}ttacker: {T}{L}{S}-{A}ttacker is a {J}ava-based framework for analyzing {T}{L}{S} libraries. {I}t can be used to manually test {T}{L}{S} clients and servers or as as a software library for more advanced tools. --- github.com},
+	howpublished = {\url{https://github.com/tls-attacker/TLS-Attacker}},
+	note = {[Accessed 15-04-2025]},
+}
+
+@misc{ssh-fuzzer,
+	author = {},
+	title = {{G}it{H}ub - assist-project/ssh-fuzzer: {S}tate fuzzer for {S}{S}{H} --- github.com},
+	howpublished = {\url{https://github.com/assist-project/ssh-fuzzer}},
+	note = {[Accessed 15-04-2025]},
 }
 
 @misc{impacket,
@@ -66,6 +140,27 @@ isbn="978-3-319-67113-0"
 	title = {{H}ome --- docker.com},
 	howpublished = {\url{https://www.docker.com/}},
 	note = {[Accessed 27-03-2025]},
+}
+
+@misc{tcp-echo,
+	author = {},
+	title = {{G}it{H}ub - venilnoronha/tcp-echo-server: {A} simple {T}{C}{P} {E}cho {S}erver written in {G}olang --- github.com},
+	howpublished = {\url{https://github.com/venilnoronha/tcp-echo-server}},
+	note = {[Accessed 06-04-2025]},
+}
+
+@misc{docker-windows,
+	author = {},
+	title = {{G}it{H}ub - dockur/windows: {W}indows inside a {D}ocker container. --- github.com},
+	howpublished = {\url{https://github.com/dockur/windows}},
+	note = {[Accessed 06-04-2025]},
+}
+
+@misc{docker-macos,
+	author = {},
+	title = {{G}it{H}ub - dockur/macos: mac{O}{S} inside a {D}ocker container. --- github.com},
+	howpublished = {\url{https://github.com/dockur/macos}},
+	note = {[Accessed 06-04-2025]},
 }
 
 @InProceedings{tcp-fuzzing2,

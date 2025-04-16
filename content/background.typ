@@ -24,6 +24,7 @@ In addition to the sequence and acknowledgement numbers TCP headers also have a 
   [*SYN*: Signifies that the sender wants to synchronize sequence numbers. This is normally only set during the initial handshake process],
   [*RST*: Aborts the connection, immediately closing both sides.],
   [*FIN*: Signifies that the sender wants to close their side of the connection.],
+  [*PSH*: Signifies that the receiver should deliver the data directly instead of buffering it.],
 )
 
 Note that multiple of these flags can be set at once. Combinations such as SYN+ACK or FIN+ACK are used in TCP communication.

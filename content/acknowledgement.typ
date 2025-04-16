@@ -1,1 +1,1 @@
-I would like to thank the Norrlands nation library for providing me a place to study while working on this thesis. I would also like to thank Albin Karlsson for letting me use his laptop to learn the model for macOS.
+I would like to thank the Norrlands nation library for providing me a place to study as well as a steady supply of coffee while working on this thesis. I would also like to thank Paul Fiterau-Brostean for his help during the development of TCP-Fuzzer.
