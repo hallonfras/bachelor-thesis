@@ -28,7 +28,7 @@
   v(5mm)
   align(
     center,
-    text(font: fonts.sans, 2em, weight: 700, "Technical University of Munich"),
+    text(font: fonts.sans, 2em, weight: 700, "Uppsala University"),
   )
 
   v(5mm)
