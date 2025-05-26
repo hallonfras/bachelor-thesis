@@ -30,13 +30,12 @@ In addition to the sequence and acknowledgement numbers TCP headers also have a 
 Note that multiple of these flags can be set at once. Combinations such as SYN+ACK or FIN+ACK are used in TCP communication.
 
 *The Three-way handshake.*
-Since TCP is a connection-oriented protocol it needs a way of establishing communication. This is done using the three way handshake. The client first sends a packet with seq number X and the SYN flag set. The server then responds with a packet of form (SYN+ACK,seq=Y,ack=X+1). The client responds with (ACK,seq=Y,ack=Y+1),establishing the connection.
-
+Since TCP is a connection-oriented protocol it needs a way of establishing communication. This is done using the three way handshake. The client first sends a packet with seq number X and the SYN flag set. The server then responds with a packet of form (SYN+ACK,seq=Y,ack=X+1). The client responds with (ACK,seq=Y,ack=Y+1),establishing the connection. The initial sequence numbers selected by the client and server are usually random, in order to prevent security vulnerabilities where an attacker might try to guess the next initial sequence number.
 
 
 
 == State Fuzzing and Model learning
-A common method of conformance testing for software is called model-based testing. It involves constructing a model of how a given System Under Test (SUT) is supposed to behave according to the specification and then checking the observed behavior for conformance with this model. This has yielded good results for various kinds of software including previous work on TCP by Bishop et al @sewell. The model based approach is not without drawbacks however, chief among them being the time required to construct said model. This is especially troublesome if the software in question has many different optional extensions or happens to be updated often. State fuzzing aims to solve this by using model learning @vaandrager to automatically generate these models. This is done by sending input sequences chosen from an input alphabet and observing the outputs. Then a model is constructed based upon how the SUT has behaved and this model can be checked for adherence to the specification.
+A common method of conformance testing for software is called model-based testing. It involves constructing a model of how a given System Under Test (SUT) is supposed to behave according to the specification and then checking the observed behavior for conformance with this model. This has yielded good results for various kinds of software including previous work on TCP by Bishop et al @sewell. The model based approach is not without drawbacks however, chief among them being the time required to construct said model. This is especially troublesome if the software in question has many different optional extensions or happens to be updated often. State fuzzing aims to solve this by using model learning @vaandrager to automatically generate these models. This is done by sending input sequences chosen from an input alphabet and observing the outputs. Then a model is constructed based upon how the SUT has behaved and this model can be checked for adherence to a protocol specification, e.g RFC 793 for TCP. @rfc793
 
 State fuzzing setups usually consist of three components as shown in Figure 2.
 
@@ -61,7 +60,7 @@ State fuzzing setups usually consist of three components as shown in Figure 2.
 
 
 
-The _learner_ selects symbols from a list of valid symbols, this is called the _alphabet_. It then sends these to the _mapper_ which converts them into concrete outputs. The mapper then recieves the response from the System Under Test (SUT) and converts them into alphabet symbols which it sends to the learner. An example for TCP could look like this.
+The _learner_ selects symbols from a list of input symbols, this is called the _alphabet_. It then sends these to the _mapper_ which converts them into concrete inputs for the System Under Test (SUT). The mapper then recieves responses from the System Under Test (SUT) and converts them into alphabet symbols which it sends to the learner. An example for TCP could look like this. Note the seq and ack numbers on the concrete packets.
 #pad(
   figure(
     diagram(

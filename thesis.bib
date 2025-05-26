@@ -15,6 +15,21 @@ isbn="978-3-319-67113-0"
 }
 
 
+@inproceedings{protocol-state-fuzzing,
+author = {De Ruiter, Joeri and Poll, Erik},
+title = {Protocol state fuzzing of TLS implementations},
+year = {2015},
+isbn = {9781931971232},
+publisher = {USENIX Association},
+address = {USA},
+abstract = {We describe a largely automated and systematic analysis of TLS implementations by what we call 'protocol state fuzzing': we use state machine learning to infer state machines from protocol implementations, using only blackbox testing, and then inspect the inferred state machines to look for spurious behaviour which might be an indication of flaws in the program logic. For detecting the presence of spurious behaviour the approach is almost fully automatic: we automatically obtain state machines and any spurious behaviour is then trivial to see. Detecting whether the spurious behaviour introduces exploitable security weaknesses does require manual investigation. Still, we take the point of view that any spurious functionality in a security protocol implementation is dangerous and should be removed.We analysed both server- and client-side implementations with a test harness that supports several key exchange algorithms and the option of client certificate authentication. We show that this approach can catch an interesting class of implementation flaws that is apparently common in security protocol implementations: in three of the TLS implementations analysed new security flaws were found (in GnuTLS, the Java Secure Socket Extension, and OpenSSL). This shows that protocol state fuzzing is a useful technique to systematically analyse security protocol implementations. As our analysis of different TLS implementations resulted in different and unique state machines for each one, the technique can also be used for fingerprinting TLS implementations.},
+booktitle = {Proceedings of the 24th USENIX Conference on Security Symposium},
+pages = {193–206},
+numpages = {14},
+location = {Washington, D.C.},
+series = {SEC'15}
+}
+
 @article{vaandrager,
   title={Model learning},
   author={Vaandrager, Frits},
@@ -221,6 +236,23 @@ isbn="978-3-319-10702-8"
     month =     jan,
     abstract =  {},
 }
+
+
+@misc{rfc793,
+    series =    {Request for Comments},
+    number =    793,
+    howpublished =  {RFC 793},
+    publisher = {RFC Editor},
+    doi =       {10.17487/RFC0793},
+    url =       {https://www.rfc-editor.org/info/rfc793},
+    author =    {},
+    title =     {{Transmission Control Protocol}},
+    pagetotal = 91,
+    year =      1981,
+    month =     sep,
+    abstract =  {},
+}
+
 
 @misc{PSF,
   author = {},
